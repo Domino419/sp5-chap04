@@ -10,4 +10,4 @@
 4. 리모트 리포지토리로 푸시 : git push origin main
    git commit -m  "md 파일 저장  "
 
-git commit -m  "cahp03.스프링DI - 8. 두개 이상의 설정 파일 사용하기  "
+git commit -m  "cahp04.의존 자동 주입 - 프로젝트 기동 확인 후 firstommit  "

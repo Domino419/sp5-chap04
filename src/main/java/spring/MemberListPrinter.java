@@ -1,5 +1,7 @@
 package spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.Collection;
 
 /**
@@ -11,6 +13,8 @@ public class MemberListPrinter {
  private MemberDao memberDao ;
  private MemberPrinter printer ;
 
+ public MemberListPrinter() {  //  [리스트4.7]
+ }
     /**
      * method        : MemberListPrinter (constructor)
      * date          : 24-11-17
@@ -32,6 +36,31 @@ public class MemberListPrinter {
     public void printAll() {
         Collection <Member> members = memberDao.selectAll() ;
         members.forEach( m -> printer.print(m));
+    }
+    /**
+     * method        : setMemberDao
+     * date          : 24-11-17 23:54
+     * param         : MemberDao memberDao - MemberDao 객체를 주입받음
+     * return        : void
+     * description   : MemberDao 객체를 해당 클래스의 필드에 주입
+     * history       : [리스트 4.7]
+     */
+    @Autowired
+    public void setMemberDao(MemberDao memberDao) {
+        this.memberDao = memberDao;
+    }
+
+    /**
+     * method        : setMemberPrinter
+     * date          : 24-11-17 23:54
+     * param         : MemberPrinter printer - MemberPrinter 객체를 주입받음
+     * return        : void
+     * description   : MemberPrinter 객체를 해당 클래스의 필드에 주입
+     * history       : [리스트 4.7]
+     */
+    @Autowired
+    public void setMemberPrinter(MemberPrinter printer) {
+        this.printer = printer;
     }
 
 

@@ -1,5 +1,7 @@
 package spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.time.LocalDateTime;
 
 /**
@@ -8,8 +10,11 @@ import java.time.LocalDateTime;
  * description   : 회원 등록 서비스
  */
 public class MemberRegisterService {
-
+    @Autowired
     private MemberDao memberDao;
+
+    public MemberRegisterService(){  // [리스트4.6]
+    }
 
     public MemberRegisterService(MemberDao memberDao) {
         this.memberDao = memberDao;

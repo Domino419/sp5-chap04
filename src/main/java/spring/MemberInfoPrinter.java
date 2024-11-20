@@ -1,5 +1,7 @@
 package spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * class         : MemberInfoPrinter
  * date          : 24-11-17
@@ -17,6 +19,7 @@ public class MemberInfoPrinter {
      * param         : String email - 조회할 회원의 이메일
      * return        : void
      * description   : 주어진 이메일로 회원 정보를 검색하여, 존재하면 출력하고 없으면 메시지를 출력한다.
+
      */
     public void printMemberInfoPrinter(String email) {
         Member member = memberDao.selectByEmail(email) ;
@@ -34,7 +37,9 @@ public class MemberInfoPrinter {
      * param         : MemberDao memberDao - 의존성 주입을 위한 MemberDao 객체
      * return        : void
      * description   : MemberDao 객체를 설정하여 Member 데이터 조회에 사용한다.
+     * history       : @Autowired 추가  [리스트 4.4]
      */
+    @Autowired
     public void setMemberDao(MemberDao memberDao) {
         this.memberDao = memberDao ;
     }
@@ -45,15 +50,12 @@ public class MemberInfoPrinter {
      * param         : MemberPrinter printer - 의존성 주입을 위한 MemberPrinter 객체
      * return        : void
      * description   : MemberPrinter 객체를 설정하여 회원 정보를 출력하는 데 사용한다.
+     * history       : @Autowired 추가  [리스트 4.4]
      */
+    @Autowired
     public void setPrinter(MemberPrinter printer){
         this.printer = printer ;
     }
 }
 
 
-/*
-6.3 DI 방식 2 : 세터 메서드 방식
- 세터 메서드를 이해서 의존 객체를 주입받는 코드 작성 실습 ( 85page)
- 작업 후 AppCtx에 설정 부분 추가
- */

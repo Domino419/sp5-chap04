@@ -1,7 +1,10 @@
 package spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class ChangePasswordService {
 
+    @Autowired   //의존 자동 주입을 위한 애노태이션 추가
     private MemberDao memberDao ;
 
 

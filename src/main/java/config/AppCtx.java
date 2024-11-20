@@ -45,8 +45,7 @@ public class AppCtx {
     @Bean
     public ChangePasswordService changePwdSvc() {
         ChangePasswordService pwdSvc = new ChangePasswordService() ;
-        // 세터 ( setMemberDao()메서드 ) 를 이용해서 의존 객체를 주입한다.
-        pwdSvc.setMemberDao(memberDao());
+        // pwdSvc.setMemberDao(memberDao());   // @Autowired를 memberDao에 붙였으므로 세터 메서드를 삭제 하여도 동작이 가능하다. [리스트 4.3]
         return pwdSvc ;
     }
 
@@ -79,12 +78,13 @@ public class AppCtx {
      * return        : MemberInfoPrinter
      * description   : MemberInfoPrinter 빈을 생성하고 MemberDao 및 MemberPrinter 객체를 설정하여 반환한다.
      *                 의존성 주입을 통해 회원 정보를 조회하고 출력하는 기능을 제공한다.
+     * history       : 세터메서드를 주석처리 함 [리스트 4.5]
      */
     @Bean
     public MemberInfoPrinter infoPrinter() {
         MemberInfoPrinter infoPrinter = new MemberInfoPrinter() ;
-        infoPrinter.setMemberDao(memberDao());
-        infoPrinter.setPrinter(memberPrinter());
+       // infoPrinter.setMemberDao(memberDao());
+       // infoPrinter.setPrinter(memberPrinter());
         return infoPrinter ;
     }
 
