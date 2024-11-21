@@ -1,6 +1,7 @@
 package spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  * class         : MemberInfoPrinter
@@ -53,6 +54,7 @@ public class MemberInfoPrinter {
      * history       : @Autowired 추가  [리스트 4.4]
      */
     @Autowired
+    @Qualifier("printer")
     public void setPrinter(MemberPrinter printer){
         this.printer = printer ;
     }
