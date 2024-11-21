@@ -59,13 +59,16 @@ public class AppCtx {
 //    }
 
     @Bean
-    @Qualifier("printer")
+    @Qualifier("printer")  //119p
     public MemberPrinter memberPrinter1() {
         return new MemberPrinter() ;
     }
+
+
     @Bean
-    public MemberPrinter memberPrinter2() {
-        return new MemberPrinter() ;
+    @Qualifier("SummaryPrinter")  //120p
+    public MemberSummaryPrinter memberPrinter2() {
+        return new MemberSummaryPrinter() ;
     }
 
 

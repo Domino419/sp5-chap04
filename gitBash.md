@@ -10,4 +10,4 @@
 4. 리모트 리포지토리로 푸시 : git push origin main
    git commit -m  "md 파일 저장  "
 
-git commit -m  "cahp04.의존 자동 주입  "
+git commit -m  "3.@Qualifier 애노태이션을 이용한 의존 객체 선택 "

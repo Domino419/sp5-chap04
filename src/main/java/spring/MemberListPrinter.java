@@ -60,7 +60,7 @@ public class MemberListPrinter {
      * history       : [리스트 4.7]
      */
     @Autowired
-    @Qualifier("printer")
+    @Qualifier("SummaryPrinter")  //120p
     public void setMemberPrinter(MemberPrinter printer) {
         this.printer = printer;
     }
