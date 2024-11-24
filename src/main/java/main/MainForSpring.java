@@ -128,3 +128,9 @@ public class MainForSpring {
 	}
 
 }
+
+//new 이메일 이름 암호 암호확인
+//new 이메일 이름 암호1 암호1
+//new 이메일2 이름2 암호2 암호2
+//change 이메일 암호 암호2
+//info 이메일
