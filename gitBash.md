@@ -13,3 +13,7 @@
 git commit -m  "3.@Qualifier 애노태이션을 이용한 의존 객체 선택 "
 
 git commit -m  "chap04 처음부터 다시 !- "
+
+
+git commit -m  "chap04. 119page 상위/하위 타입 관계와 자동 주입 시작 전까지."
+

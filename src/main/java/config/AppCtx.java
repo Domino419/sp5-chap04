@@ -1,15 +1,10 @@
 package config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import spring.ChangePasswordService;
-import spring.MemberDao;
-import spring.MemberInfoPrinter;
-import spring.MemberListPrinter;
-import spring.MemberPrinter;
-import spring.MemberRegisterService;
-import spring.VersionPrinter;
+import spring.*;
 
 @Configuration
 public class AppCtx {
@@ -33,6 +28,19 @@ public class AppCtx {
 	public MemberPrinter memberPrinter() {
 		return new MemberPrinter();
 	}
+
+    //119 str
+    @Bean
+	@Qualifier("Printer")
+	public MemberPrinter memberPrinter1() {
+		return new MemberPrinter();
+	}
+	@Bean
+	@Qualifier("SummaryPrinter")
+	public MemberSummaryPrinter memberPrinter2() {
+		return new MemberSummaryPrinter();
+	}
+	// 119 end
 	
 	@Bean
 	public MemberListPrinter listPrinter() {
@@ -53,4 +61,5 @@ public class AppCtx {
 	}
 }
 
-// 113page
+// 113page  - Appctx class설정에서 memberPrinter2()메서드가 MemberSummaryPrinter 타입의 빈 객체를 설정하도록 변경.
+// 119page -
