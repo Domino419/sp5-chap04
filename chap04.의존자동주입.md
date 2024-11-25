@@ -41,6 +41,19 @@ git에 현재 시점 프로젝트 내용 push
 
 24.11.25 00:12
 상위하위 타입 관계와 자동주입하기.  (실습은 했는데.. 나중에 다시 찾아보기. 작동하는 게 아직 눈에 안 들어옴. ..
+5.@autowired 애노테이션의 필수 여부.
+@Autowired 애노테이션을 붙인 타입에 해당하는 빈이 존재하지 않으면 익셉션이 발생한다.
+5-1) 자동 주입할 대상이 필수가 아닌 경우에는 	@Autowired 애노테이션의 required 속성을 false로 지정하는 방법 
+에러 메시지 : No qualifying bean of type 'java.time.format.DateTimeFormatter' available: expected at least 1 bean which qualifies as autowire candidate. Dependency 
+5-2) 스프링5 이상에서부터는 @Autowired(required = false) 를 하지 않고 자바 8의 Optional을 사용하는 방법 
+자동 주입대상이 옵셔널인 경우 값이 없는 옵셔널을 인자로 전달하고(NPE 발생 X) 옵셔널을 사용하는 코드는
+값 존재 여부에 따라 알맞게 의존 객체를 사용하면 된다.
+5-3) @Nullable 애노테이션을 사용하는 방법 
+
+
+에러 Exception in thread "main" java.util.UnknownFormatConversionException: Conversion = '/'
+System.out.printf에서 회원정보 : 이메일 = %/s, 이름=%/s \n로 형식 지정자 잘못 넣어서 에러 
+
 
 
 
