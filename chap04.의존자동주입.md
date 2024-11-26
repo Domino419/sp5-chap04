@@ -54,6 +54,18 @@ git에 현재 시점 프로젝트 내용 push
 에러 Exception in thread "main" java.util.UnknownFormatConversionException: Conversion = '/'
 System.out.printf에서 회원정보 : 이메일 = %/s, 이름=%/s \n로 형식 지정자 잘못 넣어서 에러 
 
+24.11.26 17:00
+5-1.생성자 초기화와 필수 여부 지정 방식 동작 이해
+@Autowired  ( required ="false") 이면 일치하지 않는 빈이 존재하지 않을 때 필드나 메서드에 null을 전달하지 않는다.
+@@Nullable 을 사용하면 스프링 컨테이너가 의존 주입 대상이 존재하지 않을 때 null을 값으로 전달한다. 
+일치하는 빈이 없을 때 값 할당 자체를 하지 않는 방법 = @Autowired  ( required ="false") 
+일치하는 빈이 없을 때 값을 null로 할당하는 방법 = @@Nullable
+매칭되는 빈이 없으면 값이 없는 Optional을 할당하는 방법 = 예시 setDateTimeFormatter(Optional<DateTimeFormatter> formatterOpt) 
+ >> 기본 생성자에서 자동 주입 대상이 되는 필드를 초기화할 때 3가지 방법 중에 어느것을 해야 할지 주의해야 한다.
+
+
+6
+자동 주입과 명시적 의존 주입 간의 관계 
 
 
 
