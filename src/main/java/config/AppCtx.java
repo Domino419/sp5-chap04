@@ -48,8 +48,10 @@ public class AppCtx {
 	}
 	
 	@Bean
-	public MemberInfoPrinter infoPrinter() {
-		return  new MemberInfoPrinter();
+	public MemberInfoPrinter infoPrinter() {                           //infoPrinter 으로 Spring 컨텍스트에 등록
+		MemberInfoPrinter infoPrinter = new MemberInfoPrinter() ;	   // MemberInfoPrinter 클래스의 새로운 인스턴스를 생성
+		infoPrinter.setPrinter(memberPrinter2());					   // setPrinter 메소드를 호출하여 MemberPrinter의 특정 구현체인 memberPrinter2()를 주입
+		return infoPrinter ;										   // 초기화된 MemberInfoPrinter 객체를 반환하며, 이 객체는 Spring 컨테이너에 등록
 	}
 	
 	@Bean
